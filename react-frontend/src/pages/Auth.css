@@ -1,0 +1,65 @@
+#cover {
+    background: #222 url('https://picsum.photos/id/602/1920/1080') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+}
+
+.cover-caption {
+    width: 100%;
+    z-index: 1;
+}
+
+.events__list {
+    width: 40rem;
+    max-width: 90%;
+    margin: 2rem auto;
+    list-style: none;
+    padding: 0;
+}
+
+.events_list-item{
+    margin : 1rem 0;
+    padding: 1rem;
+    border: 2px solid #5101d1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.events_list-item h1 {
+    margin: 0;
+    font-size : 1.5rem;
+    color : #5101d1;
+}
+
+.events_list-item h2 {
+    margin: 0;
+    font-size : 1.5rem;
+    color : #aaaaaa;
+}
+
+
+.events_list-item button {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    font: inherit;
+    background-color: #5101d1;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 5px;
+}
+
+/* .events_list-item button:hover,
+.events_list-item button:active{
+    color: #5101d1;
+    background: #ffffff;
+    border-radius:5px;
+    text-decoration: none;
+} */

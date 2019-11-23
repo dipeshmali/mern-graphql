@@ -1,0 +1,14 @@
+.model {
+    max-width: 90%;
+    background-color: rgb(244, 245, 245);
+    position: fixed;
+    top:20vh;
+    left : 5%;
+}
+
+@media(min-width : 768px){
+    .model{
+        width: 50rem;
+        left: calc((100% - 50rem)/2);
+    }
+}
