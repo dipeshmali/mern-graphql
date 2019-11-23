@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm i -g react-scripts",
+    "preinstall": "cd react-frontend && npm install",
     "start": "nodemon app.js",
     "postinstall": "cd react-frontend && npm run build",
     "server": "nodemon app.js",
