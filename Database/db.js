@@ -1,9 +1,10 @@
 //Import the mongoose module
 var mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
 mongoose.Promise = global.Promise;
 //Set up default mongoose connection
 
-mongoose.connect('mongodb://127.0.0.1:27017/graphql', { useNewUrlParser: true });
+mongoose.connect(`${process.env.DB}`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Get the default connection
 var db = mongoose.connection;
