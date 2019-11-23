@@ -57,8 +57,8 @@ app.use(function (err, req, res, next) {
 });
 
 
-app.listen((process.env.PORT || 8080, () => {
-    console.log('server is running', process.env.PORT, ' or ', 8080);
+app.listen(process.env.PORT || 8080, () => {
+    console.log('server is running', process.env.PORT, ' or ', 8080)
 });
 
 
