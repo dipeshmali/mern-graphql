@@ -38,7 +38,7 @@ class Booking extends Component {
              `
         }
 
-        fetch('http://localhost:8080/graphql', {
+        fetch(`http://${window.location.host}/graphql`, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -76,7 +76,7 @@ class Booking extends Component {
             }
         }
 
-        fetch('http://localhost:8080/graphql', {
+        fetch(`http://${window.location.host}/graphql`, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
