@@ -10,6 +10,7 @@ import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from './context/auth-context';
+import PageLoader from './components/Spinner/pageloader';
 
 const AuthPage = lazy(() => import('./pages/Auth'));
 const Event = lazy(() => import('./pages/Events'));
@@ -30,13 +31,17 @@ class App extends Component {
 
   logout = () => {
     this.setState({ token: null, userId: null })
-    // this.props.history.push('/');
   }
 
   render() {
+    console.log('Environment :', process.env.NODE_ENV);
     return (
       <div className="App" >
-        <Suspense fallback={<p>loding..</p>}>
+        <Suspense fallback={
+          <>
+            <PageLoader />
+          </>
+        }>
           <AuthContext.Provider value={{
             token: this.state.token,
             userId: this.state.userId,

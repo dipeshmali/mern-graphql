@@ -5,6 +5,8 @@ import './Auth.css'
 import EventList from '../components/Events/EventList';
 import Spinner from '../components/Spinner';
 import { success, error } from '../components/Toast';
+import { BASE_API_URL } from '../config/apiConfig';
+import PageLoader from '../components/Spinner/pageloader';
 
 class Event extends Component {
 
@@ -71,7 +73,7 @@ class Event extends Component {
              `
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -113,7 +115,7 @@ class Event extends Component {
              `
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -165,7 +167,7 @@ class Event extends Component {
              `
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -199,7 +201,7 @@ class Event extends Component {
                         </div> : ''
                     }
 
-                    {this.state.loading ? <Spinner /> :
+                    {this.state.loading ? <PageLoader /> :
                         <EventList
                             events={this.state.events}
                             // authUserId={this.context.userId}

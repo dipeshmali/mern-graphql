@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AuthContext from '../context/auth-context';
 import { success, error } from '../components/Toast';
 // import Authform from '../components/Forms/auth';
+import { BASE_API_URL } from '../config/apiConfig';
 
 class AuthPage extends Component {
 
@@ -30,7 +31,6 @@ class AuthPage extends Component {
         if (email.trim().length === 0 || password.trim().length === 0) {
             return;
         }
-        console.log(email, password);
 
         let requestBody = {
             query: `
@@ -57,7 +57,7 @@ class AuthPage extends Component {
             }
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

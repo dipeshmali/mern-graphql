@@ -15,6 +15,7 @@ const BookingList = (props) => {
                             <div className="bookings_item-actions">
                                 <button className="button" onClick={props.cancelBooking.bind(this, booking._id)}>Cancel Booking</button>
                             </div>
+
                         </li>
                     )
                 })

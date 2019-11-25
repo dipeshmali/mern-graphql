@@ -4,6 +4,8 @@ import AuthContext from '../context/auth-context';
 import Spinner from '../components/Spinner';
 import BookingList from '../components/Bookings/BookingList';
 import { success, error } from '../components/Toast';
+import { BASE_API_URL } from '../config/apiConfig';
+import PageLoader from '../components/Spinner/pageloader';
 
 class Booking extends Component {
     constructor(props) {
@@ -38,7 +40,7 @@ class Booking extends Component {
              `
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -76,7 +78,7 @@ class Booking extends Component {
             }
         }
 
-        fetch(`http://${window.location.host}/graphql`, {
+        fetch(BASE_API_URL, {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
@@ -108,7 +110,7 @@ class Booking extends Component {
         console.log('Loader =>', this.state.loading)
         return (
             <div className="bookings-list">
-                {this.state.loading ? <Spinner /> :
+                {this.state.loading ? <PageLoader /> :
                     (this.state.bookings && this.state.bookings.length > 0) ?
                         <BookingList
                             bookings={this.state.bookings}
